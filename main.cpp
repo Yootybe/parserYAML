@@ -1,4 +1,5 @@
 #include "MyParser.h"
+#include "Parser.h"
 #include "Visitor.h"
 #include "VisitorImp.h"
 #include "Source.h"
@@ -7,7 +8,7 @@
 #include "StreamSink.h"
 #include "StringSource.h"
 #include "StringSink.h"
-#include "DecoraterVisitor.h"
+#include "DecoratorVisitor.h"
 
 #include <iostream>
 #include <fstream>
@@ -35,8 +36,9 @@ int main()
     }
 
     VisitorImp firtsVisitorImp;
-    MyParser parser(currentSource);
-    parser.parse(&firtsVisitorImp);
+    Parser* prs;
+    prs = new MyParser(currentSource);
+    prs->parse(&firtsVisitorImp);
 
     std::cout << std::endl << "Put 0 if you want out parsed as string" << std::endl << "Put 1 if you want out parsed string as file" << std::endl;
 
