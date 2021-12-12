@@ -4,18 +4,19 @@
 #include "Visitor.h"
 #include "YAMLobj.h"
 #include "Source.h"
+#include "Parser.h"
 
 #include <string>
 #include <vector>
 #include <memory>
 
-class MyParser
+class MyParser : public Parser
 {
 public:
     MyParser(Source* src);
     ~MyParser();
 
-    void parse(Visitor* visitor);
+    void parse(Visitor* visitor) override;
 
 private:
     Source* src;
