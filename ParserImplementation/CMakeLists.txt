@@ -8,7 +8,8 @@ add_library(${PROJECT_NAME} Interfaces/Parser.h Interfaces/MyParser.h Source/MyP
 Interfaces/VisitorImp.h Source/VisitorImp.cpp Interfaces/YAMLobj.h Source/YAMLobj.cpp 
 Interfaces/Source.h Interfaces/Sink.h
 Interfaces/StringSource.h Interfaces/StreamSource.h Interfaces/StringSink.h Interfaces/StreamSink.h
-Interfaces/DecoratorVisitor.h Interfaces/DecoratorSink.h Interfaces/DecoratorParser.h Interfaces/DecoratorSource.h) 
+Interfaces/DecoratorVisitor.h Interfaces/DecoratorSink.h Interfaces/DecoratorParser.h Interfaces/DecoratorSource.h
+Interfaces/Factories.h Source/Factories.cpp) 
 
 target_include_directories(${PROJECT_NAME} PUBLIC Interfaces)
 

@@ -20,20 +20,20 @@ public:
 
 };
 
-StreamSource::StreamSource()
+inline StreamSource::StreamSource()
 {
 
 }
 
-StreamSource::~StreamSource()
+inline StreamSource::~StreamSource()
 {
     
 }
 
-void StreamSource::read(std::string& generalString)
+inline void StreamSource::read(std::string& generalString)
 {
     std::ifstream file;
-    file.open("D:\\Desktop\\sem1\\parsing_labs_cpp\\lb1\\src\\build\\bin\\fileToParse.yaml");
+    file.open("D:\\Desktop\\sem1\\parsing_labs_cpp\\lb1\\parserYAML\\build\\bin\\fileToParse.yaml");
     if (file.is_open())
     {
         std::getline(file, generalString);

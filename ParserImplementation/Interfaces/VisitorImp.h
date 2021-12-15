@@ -3,6 +3,7 @@
 
 #include "Visitor.h"
 #include "YAMLobj.h"
+#include "Sink.h"
 
 #include <string>
 #include <vector>
@@ -10,7 +11,7 @@
 class VisitorImp : public Visitor 
 {
 public:
-    VisitorImp();
+    VisitorImp(Sink* sink);
     ~VisitorImp();
 
     std::string inputSting;
@@ -28,6 +29,10 @@ public:
     std::vector<YAMLobj*> basedYamlObjs;
     std::vector<YAMLobj*> yamlVec;
     YAMLobj* baseYamlObj;
+
+    void onFinished() override;
+
+    Sink* sink;
 
 
 };

@@ -20,17 +20,17 @@ public:
 
 };
 
-StringSource::StringSource()
+inline StringSource::StringSource()
 {
 
 }
 
-StringSource::~StringSource()
+inline StringSource::~StringSource()
 {
     
 }
 
-void StringSource::read(std::string& generalString)
+inline void StringSource::read(std::string& generalString)
 {
     std::getline(std::cin, generalString);
 }

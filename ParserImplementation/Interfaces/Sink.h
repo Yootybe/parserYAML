@@ -12,8 +12,8 @@ class Sink
 {
 public:
 
+    // virtual void write(const std::string& str) = 0;
     virtual void write(std::vector<YAMLobj*>& yamlVec) = 0;
-
 };
 
 #endif // SINK_H

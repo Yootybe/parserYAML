@@ -20,10 +20,45 @@ public:
 
     virtual std::pair<std::string, int> onParseKey(std::string& key, int nestLvl) override
     {
-        spdlog::info("!");
+        spdlog::info("onParseKey");
         return this->visitor_->onParseKey(key, nestLvl);
     }
     
+    virtual std::pair<std::string, int> onParseStr(std::string& string) override
+    {
+        spdlog::info("onParseStr");
+        return this->visitor_->onParseStr(string);
+    }
+
+    virtual std::pair<std::string, int> onParseNumber(std::string& number) override
+    {
+        spdlog::info("onParseNumber");
+        return this->visitor_->onParseNumber(number);
+    }
+
+    virtual std::pair<std::string, int> onParseBool(std::string& boolean) override
+    {
+        spdlog::info("onParseBool");
+        return this->visitor_->onParseBool(boolean);
+    }
+
+    virtual std::pair<std::string, int> onParseList(std::string& list) override
+    {
+        spdlog::info("onParseList");
+        return this->visitor_->onParseList(list);
+    }
+
+    virtual void onFinished() override
+    {
+        spdlog::info("onFinished()");
+        return this->visitor_->onFinished();
+    }
+
+    virtual void onParseNest() override
+    {
+        spdlog::info("!");
+        return this->visitor_->onParseNest();
+    }
 };
 
 #endif // DECORATOR_VISITOR_H

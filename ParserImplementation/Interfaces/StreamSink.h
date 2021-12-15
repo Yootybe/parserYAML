@@ -11,7 +11,7 @@
 
 void recWriteStream (YAMLobj* obj, std::string& fileStr);
 
-class StreamSink : Sink
+class StreamSink : public Sink
 {
 public:
 
@@ -22,17 +22,17 @@ public:
 
 };
 
-StreamSink::StreamSink()
+inline StreamSink::StreamSink()
 {
 
 }
 
-StreamSink::~StreamSink()
+inline StreamSink::~StreamSink()
 {
     
 }
 
-void StreamSink::write(std::vector<YAMLobj*>& yamlVec)
+inline void StreamSink::write(std::vector<YAMLobj*>& yamlVec)
 {
     std::string fileStr = "--- \n";
     
@@ -48,7 +48,7 @@ void StreamSink::write(std::vector<YAMLobj*>& yamlVec)
     }
 }
 
-void recWriteStream (YAMLobj* obj, std::string& fileStr)
+inline void recWriteStream (YAMLobj* obj, std::string& fileStr)
 {
 
     std::string spaces = " ";

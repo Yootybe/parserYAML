@@ -9,7 +9,7 @@
 #include <string>
 #include <vector>
 
-void recWrite (YAMLobj* obj);
+inline void recWrite (YAMLobj* obj);
 
 class StringSink : public Sink
 {
@@ -22,17 +22,17 @@ public:
 
 };
 
-StringSink::StringSink()
+inline StringSink::StringSink()
 {
 
 }
 
-StringSink::~StringSink()
+inline StringSink::~StringSink()
 {
     
 }
 
-void StringSink::write(std::vector<YAMLobj*>& yamlVec)
+inline void StringSink::write(std::vector<YAMLobj*>& yamlVec)
 {
     std::cout << std::endl;
 
@@ -43,7 +43,7 @@ void StringSink::write(std::vector<YAMLobj*>& yamlVec)
 }
 
 
-void recWrite (YAMLobj* obj)
+inline void recWrite(YAMLobj* obj)
 {
     std::string spaces = " ";
     for (int i = 0; i < obj->nestLvl; i++)
