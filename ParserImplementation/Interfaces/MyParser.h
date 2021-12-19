@@ -16,7 +16,7 @@ public:
     MyParser(Source* src);
     ~MyParser();
 
-    void parse(Visitor* visitor) override;
+    bool parse(Visitor* visitor) override;
 
 private:
     Source* src;

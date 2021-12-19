@@ -45,7 +45,7 @@ std::pair<std::string, int> VisitorImp::onParseKey(std::string& key, int nestLvl
         }
     }
 
-    std::cout << key << ":" << " ";
+    // std::cout << key << ":" << " ";
 
     baseYamlObj->key = key;
     baseYamlObj->nestLvl = nestLvl;
@@ -54,7 +54,7 @@ std::pair<std::string, int> VisitorImp::onParseKey(std::string& key, int nestLvl
 
 std::pair<std::string, int> VisitorImp::onParseStr(std::string& string)
 {
-    std::cout << string << " ";
+    // std::cout << string << " ";
 
     baseYamlObj->value = string;
     return std::make_pair("outStr", 0);
@@ -62,7 +62,7 @@ std::pair<std::string, int> VisitorImp::onParseStr(std::string& string)
 
 std::pair<std::string, int> VisitorImp::onParseNumber(std::string& number)
 {
-    std::cout << number << " ";
+    // std::cout << number << " ";
 
     baseYamlObj->value = number;
     return std::make_pair("outNumber", 0);
@@ -70,7 +70,7 @@ std::pair<std::string, int> VisitorImp::onParseNumber(std::string& number)
 
 std::pair<std::string, int> VisitorImp::onParseBool(std::string& boolean)
 {
-    std::cout << boolean + " ";
+    // std::cout << boolean + " ";
     baseYamlObj->value = boolean;
 
     return std::make_pair("cum", 0);
@@ -78,7 +78,7 @@ std::pair<std::string, int> VisitorImp::onParseBool(std::string& boolean)
 
 std::pair<std::string, int> VisitorImp::onParseList(std::string& list)
 {
-    std::cout << list;
+    // std::cout << list;
     
     baseYamlObj->value = list;
     return std::make_pair("outAllList", 0);

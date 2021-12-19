@@ -13,7 +13,7 @@ class Parser
 {
 public:
     
-    virtual void parse(Visitor* visitor) = 0;
+    virtual bool parse(Visitor* visitor) = 0;
     
 };
 

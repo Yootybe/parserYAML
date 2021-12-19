@@ -5,6 +5,7 @@
 #include <fstream>
 #include <vector>
 #include <map>
+#include <gtest/gtest.h>
 
 MyParser::MyParser(Source* src) : src(src)
 {
@@ -16,23 +17,26 @@ MyParser::~MyParser()
     
 }
 
-void MyParser::parse(Visitor* visitor)
+bool MyParser::parse(Visitor* visitor)
 {
     std::string inputString;
     src->read(inputString);
     if (inputString.size() == 0) 
     {
         std::cout << "Empty string" << std::endl;
+        return 0;
     }
 
     if (inputString.substr(0, 3) != "---")
     {
         std::cout << "This is not YAML" << std::endl;
+        return 0;
     }
 
     if (inputString.find(':') == std::string::npos) 
     {
         std::cout << "YAML is empty" << std::endl;
+        return 0;
     }
 
     int spaceNotificator = 0;
@@ -42,7 +46,8 @@ void MyParser::parse(Visitor* visitor)
 
     bool isCurrentNodeParent = true;
 
-    for(int i = 3; i < inputString.size(); i++)
+    int i = 3;
+    for(i; i < inputString.size(); i++)
     {
         if (isspace(inputString[i]))
         {
@@ -241,6 +246,12 @@ void MyParser::parse(Visitor* visitor)
         // YAMLobj* currentYamlObj = (YAMLobj*)malloc(sizeof(YAMLobj));
         // baseYamlObj = currentYamlObj;
     }
+    if (i != inputString.size())
+    {
+        return 0;
+    }
 
     visitor->onFinished();
+
+    return 1;
 }

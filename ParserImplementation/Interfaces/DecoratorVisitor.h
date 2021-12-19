@@ -20,31 +20,32 @@ public:
 
     virtual std::pair<std::string, int> onParseKey(std::string& key, int nestLvl) override
     {
-        spdlog::info("onParseKey");
+        // TODO: spdlog::info("onParseKey spdlog::info("onParseKey");");
+        spdlog::info("onParseKey: " + key);
         return this->visitor_->onParseKey(key, nestLvl);
     }
     
     virtual std::pair<std::string, int> onParseStr(std::string& string) override
     {
-        spdlog::info("onParseStr");
+        spdlog::info("onParseStr: " + string);
         return this->visitor_->onParseStr(string);
     }
 
     virtual std::pair<std::string, int> onParseNumber(std::string& number) override
     {
-        spdlog::info("onParseNumber");
+        spdlog::info("onParseNumber: " + number);
         return this->visitor_->onParseNumber(number);
     }
 
     virtual std::pair<std::string, int> onParseBool(std::string& boolean) override
     {
-        spdlog::info("onParseBool");
+        spdlog::info("onParseBool: " + boolean);
         return this->visitor_->onParseBool(boolean);
     }
 
     virtual std::pair<std::string, int> onParseList(std::string& list) override
     {
-        spdlog::info("onParseList");
+        spdlog::info("onParseList: " + list);
         return this->visitor_->onParseList(list);
     }
 

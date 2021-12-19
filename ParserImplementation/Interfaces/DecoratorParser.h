@@ -15,7 +15,7 @@ public:
 
     DecoratorParser(Parser* parser) : parser_(parser) {}
 
-    virtual void parse(Visitor* visitor) override
+    virtual bool parse(Visitor* visitor) override
     {
         spdlog::info("Parser start");
         return this->parser_->parse(visitor);

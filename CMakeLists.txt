@@ -37,6 +37,7 @@ conan_basic_setup(TARGETS)
 
 
 add_subdirectory(ParserImplementation)
+add_subdirectory(QA)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
